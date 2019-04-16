@@ -97,7 +97,7 @@
     "author": "Jerry<alphaformbase@gmail.com>",
     "keywords": [
         "react",
-        "ver01form",
+        "@ver01/form",
         "antd",
         "ver01.com"
     ],
