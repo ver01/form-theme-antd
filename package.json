@@ -31,9 +31,12 @@
     "peerDependencies": {
         "react": ">=15"
     },
-    "dependencies": {},
-    "devDependencies": {
+    "dependencies": {
         "antd": "^3.12.4",
+        "moment": "^2.24.0",
+        "rc-color-picker": "^1.2.6"
+    },
+    "devDependencies": {
         "atob": "^2.0.3",
         "babel-cli": "^6.18.0",
         "babel-core": "^6.26.3",
@@ -67,11 +70,9 @@
         "less-loader": "^4.1.0",
         "lint-staged": "^3.3.1",
         "mocha": "^5.2.0",
-        "moment": "^2.24.0",
         "node-sass": "^4.11.0",
         "node-sass-import": "^2.0.1",
         "prettier": "^1.16.4",
-        "rc-color-picker": "^1.2.6",
         "react": "^15.5.0",
         "react-addons-test-utils": "^15.3.2",
         "react-codemirror2": "^4.1.0",
