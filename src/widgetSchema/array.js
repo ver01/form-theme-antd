@@ -21,7 +21,7 @@ const arrayDefault = {
                             },
                             style: {
                                 float: "right",
-                                $vf_width: ({ extOption: { orderable, removable } }) => {
+                                $vf_width: ({ schemaOption: { orderable, removable } }) => {
                                     if (!orderable) {
                                         return "32px";
                                     }
@@ -80,7 +80,7 @@ const arrayDefault = {
                         component: Div,
                         props: {
                             style: {
-                                $vf_marginRight: ({ handle, extOption: { orderable, removable } }) => {
+                                $vf_marginRight: ({ handle, schemaOption: { orderable, removable } }) => {
                                     const { canMoveUp, canMoveDown, canRemove } = handle;
                                     if (canMoveUp || canMoveDown || canRemove) {
                                         if (!orderable) {

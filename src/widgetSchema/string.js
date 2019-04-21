@@ -25,9 +25,9 @@ const stringPassword = {
             propsMixinList: ["autoFocus"],
             props: {
                 $vf_value: ({ value }) => value,
-                $vf_disabled: ({ extOption }) => extOption.disabled,
-                $vf_onChange: ({ handle, extOption }) =>
-                    extOption.readonly ? () => {} : e => handle.onChange(e.target.value),
+                $vf_disabled: ({ schemaOption }) => schemaOption.disabled,
+                $vf_onChange: ({ handle, schemaOption }) =>
+                    schemaOption.readonly ? () => {} : e => handle.onChange(e.target.value),
             },
         },
     ],
@@ -43,9 +43,9 @@ const stringTextarea = {
             props: {
                 autosize: { minRows: 2 },
                 $vf_value: ({ value }) => value,
-                $vf_disabled: ({ extOption }) => extOption.disabled,
-                $vf_onChange: ({ handle, extOption }) =>
-                    extOption.readonly ? () => {} : e => handle.onChange(e.target.value),
+                $vf_disabled: ({ schemaOption }) => schemaOption.disabled,
+                $vf_onChange: ({ handle, schemaOption }) =>
+                    schemaOption.readonly ? () => {} : e => handle.onChange(e.target.value),
             },
         },
     ],

@@ -25,11 +25,11 @@ export const cardTitleProps = {
 };
 
 export const formItemPropsWithoutLabel = {
-    $vf_style: ({ extOption, ...args }) => {
-        if (extOption.hideBy === true) {
+    $vf_style: ({ schemaOption, ...args }) => {
+        if (schemaOption.hideBy === true) {
             return { display: "none" };
-        } else if (typeof extOption.hideBy === "function") {
-            if (extOption.hideBy({ extOption, ...args })) {
+        } else if (typeof schemaOption.hideBy === "function") {
+            if (schemaOption.hideBy({ schemaOption, ...args })) {
                 return { display: "none" };
             }
         }
@@ -78,9 +78,9 @@ export const selectWidget = {
             props: {
                 $vf_value: ({ value }) => value,
                 $vf_onChange: ({ handle }) => handle.onChange,
-                $vf_children: ({ schema, extOption }) => {
+                $vf_children: ({ schema, schemaOption }) => {
                     const { enumNames = [] } = schema;
-                    const { enumDisabled = [] } = extOption;
+                    const { enumDisabled = [] } = schemaOption;
                     return (schema.enum || []).map((it, key) => (
                         <SelectOption
                             value={it}
@@ -110,9 +110,9 @@ export const radioWidget = {
             props: {
                 $vf_value: ({ value }) => value,
                 $vf_onChange: ({ handle }) => e => handle.onChange(e.target.value),
-                $vf_children: ({ schema, extOption }) => {
+                $vf_children: ({ schema, schemaOption }) => {
                     const { enumNames = [] } = schema;
-                    const { enumDisabled = [] } = extOption;
+                    const { enumDisabled = [] } = schemaOption;
                     return (schema.enum || []).map((it, key) => (
                         <Radio
                             value={it}
@@ -162,8 +162,9 @@ export const inputWidget = {
     propsMixinList: ["autoFocus", "style"],
     props: {
         $vf_value: ({ value }) => value,
-        $vf_disabled: ({ extOption }) => extOption.disabled,
-        $vf_onChange: ({ handle, extOption }) => (extOption.readonly ? () => {} : e => handle.onChange(e.target.value)),
+        $vf_disabled: ({ schemaOption }) => schemaOption.disabled,
+        $vf_onChange: ({ handle, schemaOption }) =>
+            schemaOption.readonly ? () => {} : e => handle.onChange(e.target.value),
     },
 };
 
