@@ -30,15 +30,20 @@ const arrayDefault = {
                                     }
                                     return "95px";
                                 },
-                                $vf_marginTop: ({ widgetName, schema: { type, title } }) => {
+                                $vf_marginTop: ({
+                                    widgetName,
+                                    schema: { type, title },
+                                    handle: { hasSchemaControl },
+                                }) => {
                                     if (widgetName === "default") {
                                         if (["object", "array"].includes(type)) {
-                                            return "0";
+                                            // in Card component
+                                            return hasSchemaControl ? "21px" : "0";
                                         } else {
                                             if (title) {
-                                                return "48px";
+                                                return hasSchemaControl ? "69px" : "48px";
                                             } else {
-                                                return "4px";
+                                                return hasSchemaControl ? "25px" : "4px";
                                             }
                                         }
                                     }
