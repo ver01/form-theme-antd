@@ -23,12 +23,12 @@ const arrayDefault = {
                                 float: "right",
                                 $vf_width: ({ schemaOption: { orderable, removable } }) => {
                                     if (!orderable) {
-                                        return "32px";
+                                        return "33px";
                                     }
                                     if (!removable) {
-                                        return "63px";
+                                        return "64px";
                                     }
-                                    return "95px";
+                                    return "96px";
                                 },
                                 $vf_marginTop: ({
                                     widgetName,
