@@ -66,7 +66,9 @@ export class NumericInput extends React.Component {
         value = value.trim();
         const reg = /^-?(0|[1-9][0-9]*)?(\.[0-9]*)?$/;
         if (reg.test(value)) {
-            if (!Number.isNaN(Number(value))) {
+            if ((value || "").trim() === "") {
+                this.props.onChange();
+            } else if (!Number.isNaN(Number(value))) {
                 this.props.onChange(Number(value));
             } else {
                 this.setState({
