@@ -8,7 +8,24 @@ import {
     Uploader,
 } from "../widgetReactComponents";
 import { formItemProps, inputWidget, selectWidget, radioWidget, readonly } from "./common";
-import moment from "moment";
+
+const dateFormat = (date, type) => {
+    const value = date || new Date();
+    const ret = [];
+    (type || "").split(" ").map(key => {
+        switch (key) {
+            case "day":
+                ret.push(`${value.getFullYear()}-${value.getMonth() + 1}-${value.getDate()}`);
+                break;
+            case "time":
+                ret.push(`${value.getHours()}:${value.getMinutes()}:${value.getMinutes()}`);
+                break;
+            default:
+                break;
+        }
+    });
+    return ret.join(" ");
+};
 
 const stringDefault = {
     component: FormItem,
@@ -76,7 +93,7 @@ const stringDate = {
         {
             component: DatePicker,
             props: {
-                $vf_value: ({ value }) => (value ? moment(value, "YYYY-MM-DD") : moment()),
+                $vf_value: ({ value }) => dateFormat(value, "day"),
                 $vf_onChange: ({ handle }) => (_, str) => handle.onChange(str),
             },
         },
@@ -90,7 +107,7 @@ const stringTime = {
         {
             component: TimePicker,
             props: {
-                $vf_value: ({ value }) => (value ? moment(value, "HH:mm:ss") : moment()),
+                $vf_value: ({ value }) => dateFormat(value, "time"),
                 $vf_onChange: ({ handle }) => (_, str) => handle.onChange(str),
             },
         },
@@ -104,8 +121,7 @@ const stringDateTime = {
         {
             component: DatePicker,
             props: {
-                $vf_value: ({ value }) =>
-                    value ? moment(value, "YYYY-MM-DD HH:mm:ss") : moment(new Date(), "YYYY-MM-DD HH:mm:ss"),
+                $vf_value: ({ value }) => dateFormat(value, "day time"),
                 $vf_onChange: ({ handle }) => (m, str) => {
                     handle.onChange(m.format("YYYY-MM-DD HH:mm:ss"));
                 },
