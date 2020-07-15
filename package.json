@@ -1,6 +1,6 @@
 {
     "name": "@ver01/form-theme-antd",
-    "version": "1.0.10",
+    "version": "1.0.11",
     "description": "Ver01 Form Theme Antd",
     "scripts": {
         "build:readme": "toctoc README.md -w",
