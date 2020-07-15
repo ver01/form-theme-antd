@@ -42,8 +42,7 @@ const numberDateTime = {
         {
             component: DatePicker,
             props: {
-                $vf_value: ({ value }) =>
-                    value ? moment(value, "YYYY-MM-DD HH:mm:ss") : moment(new Date(), "YYYY-MM-DD HH:mm:ss"),
+                $vf_value: ({ value }) => moment(value || new Date()),
                 $vf_onChange: ({ handle }) => (m, str) => {
                     handle.onChange(+m);
                 },
