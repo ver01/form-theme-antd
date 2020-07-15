@@ -60,7 +60,7 @@ export default {
             errorObjGenerator, // generator errorObj for widgetSchema render widget
         },
         number: {
-            getWidget: [pickReadonlyWidget, pickSelectWidget],
+            getWidget: [pickReadonlyWidget, pickSelectWidget, pickTimeWidget],
             widgets: numberWidgets,
             errorObjGenerator,
         },
