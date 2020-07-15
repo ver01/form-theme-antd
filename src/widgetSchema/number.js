@@ -1,4 +1,4 @@
-import { FormItem, NumericInput, InputNumber } from "../widgetReactComponents";
+import { FormItem, DataPicker, NumericInput, InputNumber } from "../widgetReactComponents";
 import { formItemProps, selectWidget, radioWidget, readonly } from "./common";
 
 const numberDefault = {
@@ -34,8 +34,27 @@ const numberUpdown = {
     ],
 };
 
+const numberDateTime = {
+    component: FormItem,
+    props: formItemProps,
+    children: [
+        {
+            component: DatePicker,
+            props: {
+                $vf_value: ({ value }) => (value ? +new Date(value) : +new Date()),
+                $vf_onChange: ({ handle }) => (m, str) => {
+                    handle.onChange(+new Date(m));
+                },
+                showTime: true,
+                format: "YYYY-MM-DD HH:mm:ss",
+            },
+        },
+    ],
+};
+
 export default {
     default: numberDefault,
+    "date-time": numberDateTime,
     updown: numberUpdown,
     select: selectWidget,
     radio: radioWidget,
