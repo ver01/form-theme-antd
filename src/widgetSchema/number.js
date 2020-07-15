@@ -1,4 +1,4 @@
-import { FormItem, DataPicker, NumericInput, InputNumber } from "../widgetReactComponents";
+import { FormItem, DatePicker, NumericInput, InputNumber } from "../widgetReactComponents";
 import { formItemProps, selectWidget, radioWidget, readonly } from "./common";
 
 const numberDefault = {
