@@ -1,6 +1,6 @@
 import React from "react";
 import { FormItem, Switch, Radio, Checkbox, Select, RadioGroup, SelectOption } from "../widgetReactComponents";
-import { formItemProps, formItemPropsWithoutLabel, readonly } from "./common";
+import { formItemProps, formItemPropsWithoutLabel, hideWidget, readonly } from "./common";
 
 const booleanDefault = {
     component: FormItem,
@@ -87,4 +87,5 @@ export default {
     checkbox: booleanCheckbox,
     radio: booleanRadio,
     readonly,
+    hide: hideWidget,
 };
