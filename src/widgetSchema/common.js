@@ -186,3 +186,7 @@ export const readonly = {
         },
     ],
 };
+
+export const hideWidget = {
+    component: null,
+};
