@@ -7,7 +7,7 @@ import {
     TimePicker,
     Uploader,
 } from "../widgetReactComponents";
-import { formItemProps, inputWidget, selectWidget, radioWidget, readonly } from "./common";
+import { formItemProps, inputWidget, selectWidget, radioWidget, hideWidget, readonly } from "./common";
 import moment from "moment";
 
 const stringDefault = {
@@ -63,10 +63,6 @@ const stringColor = {
             },
         },
     ],
-};
-
-const stringHidden = {
-    component: null,
 };
 
 const stringDate = {
@@ -145,7 +141,7 @@ export default {
     password: stringPassword,
     textarea: stringTextarea,
     color: stringColor,
-    hidden: stringHidden,
+    hide: hideWidget,
     date: stringDate,
     time: stringTime,
     dateTime: stringDateTime,
