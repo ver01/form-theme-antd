@@ -1,5 +1,5 @@
 import { FormItem, InputNumber } from "../widgetReactComponents";
-import { formItemProps, selectWidget, radioWidget, sliderWidget, readonly } from "./common";
+import { formItemProps, selectWidget, radioWidget, sliderWidget, hideWidget, readonly } from "./common";
 
 const integerDefault = {
     component: FormItem,
@@ -24,4 +24,5 @@ export default {
     radio: radioWidget,
     range: sliderWidget,
     readonly,
+    hide: hideWidget,
 };
