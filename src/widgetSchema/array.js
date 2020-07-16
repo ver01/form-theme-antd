@@ -1,5 +1,5 @@
 import { Card, Div, Button, ButtonGroup, FormItem, Uploader, checkboxGroup } from "../widgetReactComponents";
-import { cardTitleProps, formItemProps, withHide } from "./common";
+import { cardTitleProps, formItemProps, hideWidget, withHide } from "./common";
 
 const arrayDefault = {
     component: Card,
@@ -172,4 +172,5 @@ export default {
     default: arrayDefault,
     uploader: arrayUploader,
     checkbox: arrayCheckbox,
+    hide: hideWidget,
 };
