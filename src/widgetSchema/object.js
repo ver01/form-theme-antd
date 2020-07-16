@@ -1,5 +1,5 @@
 import { Card, Div, FormItem } from "../widgetReactComponents";
-import { cardTitleProps, withHide } from "./common";
+import { cardTitleProps, hideWidget, withHide } from "./common";
 
 const objectDefault = {
     component: Card,
@@ -26,4 +26,5 @@ const objectDefault = {
 
 export default {
     default: objectDefault,
+    hide: hideWidget,
 };
