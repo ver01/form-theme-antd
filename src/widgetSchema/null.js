@@ -1,5 +1,5 @@
 import { FormItem } from "../widgetReactComponents";
-import { formItemProps, readonly } from "./common";
+import { formItemProps, hideWidget, readonly } from "./common";
 
 const nullDefault = {
     component: FormItem,
@@ -8,4 +8,5 @@ const nullDefault = {
 export default {
     default: nullDefault,
     readonly,
+    hide: hideWidget,
 };
