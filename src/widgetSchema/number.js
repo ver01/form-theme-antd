@@ -1,5 +1,5 @@
 import { FormItem, DatePicker, NumericInput, InputNumber } from "../widgetReactComponents";
-import { formItemProps, selectWidget, radioWidget, readonly } from "./common";
+import { formItemProps, selectWidget, radioWidget, hideWidget, readonly } from "./common";
 import moment from "moment";
 
 const numberDefault = {
@@ -60,4 +60,5 @@ export default {
     select: selectWidget,
     radio: radioWidget,
     readonly,
+    hide: hideWidget,
 };
